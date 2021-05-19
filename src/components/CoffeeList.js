@@ -4,8 +4,8 @@ import {Text, Spinner, Popover, Button} from '@ui-kitten/components';
 import Carousel from 'react-native-snap-carousel';
 import Coffee from './Row';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {AppContext} from '../context/AppContext';
 import {getCartList, addToCart} from '../context/actions';
+import {AppContext} from '../context/AppContext';
 
 const AlertConfirm = props => (
   <Popover visible={props.visible} anchor={props.toggle}>
@@ -17,12 +17,14 @@ const AlertConfirm = props => (
 
 export const CarouselDisplay = props => {
   let carousel = null;
-
-  const [visible, setVisible] = useState(false);
   const [state, setState] = useContext(AppContext);
 
+  const [visible, setVisible] = useState(false);
+
   const renderItem = ({item}) => {
-    return <Coffee item={item} addCart={addToCart} />;
+    return (
+      <Coffee item={item} addCart={() => addToCart(item, state, setState)} />
+    );
   };
 
   return (

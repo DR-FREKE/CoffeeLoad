@@ -24,7 +24,7 @@ const AppState = () => {
       />
       <ApplicationProvider {...eva} theme={eva.light}>
         <StatusBar
-          backgroundColor={!state.isThemeDark ? '#D0B49F' : '#A47551'}
+          backgroundColor={state.isThemeDark != true ? '#D0B49F' : '#A47551'}
           barStyle="dark-content"
         />
         <AppNavigator />

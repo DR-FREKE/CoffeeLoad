@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`every component should be rendered properly should render the AppLayout component 1`] = `
+<RCTSafeAreaView
+  emulateUnlessSupported={true}
+>
+  <View />
+</RCTSafeAreaView>
+`;

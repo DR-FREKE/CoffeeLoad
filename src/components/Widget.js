@@ -33,11 +33,12 @@ export const HomeTabIconInActive = props => (
   />
 );
 
+// icon wasn't working so I replaced it
 export const ShopTabIcon = props => (
   <Icon
     {...props}
     style={{color: '#000000', height: 25}}
-    name="newspaper-outline"
+    name="wallet-outline"
     pack="ionicon"
   />
 );
@@ -45,7 +46,7 @@ export const ShopTabIconInActive = props => (
   <Icon
     {...props}
     style={{color: '#6A6A6A', height: 25}}
-    name="newspaper-outline"
+    name="wallet-outline"
     pack="ionicon"
   />
 );
@@ -107,7 +108,14 @@ export const CartIcon = props => (
   />
 );
 
-export const BackIcon = props => <Icon {...props} name="arrow-back" />;
+export const BackIcon = props => (
+  <Icon
+    {...props}
+    style={{color: '#FFFFFF', height: 25}}
+    name="arrow-back"
+    pack="ionicon"
+  />
+);
 
 export const SearchIcon = props => <Icon {...props} name="search" />;
 
