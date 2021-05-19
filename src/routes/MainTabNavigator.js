@@ -40,12 +40,15 @@ const BottomTabBar = ({navigation, state}) => (
     selectedIndex={state.index}
     onSelect={index => navigation.navigate(state.routeNames[index])}>
     <BottomNavigationTab
+      title="Home"
       icon={state.index == 0 ? HomeTabIcon : HomeTabIconInActive}
     />
     <BottomNavigationTab
+      title="Shop"
       icon={state.index == 1 ? ShopTabIcon : ShopTabIconInActive}
     />
     <BottomNavigationTab
+      title="Account"
       icon={state.index == 2 ? AccTabIcon : AccTabIconInActive}
     />
   </BottomNavigation>
