@@ -4,24 +4,22 @@ import {Layout, TopNavigation} from '@ui-kitten/components';
 import PropTypes from 'prop-types';
 
 const AppLayout = ({children, ...props}) => (
-  <Layout style={styles.scafold}>
-    <SafeAreaView>
-      {props.showTopNav && (
-        <TopNavigation
-          title={props.title}
-          subtitle={props.subtitle}
-          alignment={props.alignment}
-          accessoryLeft={props.accessoryLeft}
-          accessoryRight={props.accessoryRight}
-          style={[
-            styles.topNav,
-            {backgroundColor: props.isThemeDark ? '#A47551' : 'transparent'},
-          ]}
-        />
-      )}
-      <View>{children}</View>
-    </SafeAreaView>
-  </Layout>
+  <SafeAreaView>
+    {props.showTopNav && (
+      <TopNavigation
+        title={props.title}
+        subtitle={props.subtitle}
+        alignment={props.alignment}
+        accessoryLeft={props.accessoryLeft}
+        accessoryRight={props.accessoryRight}
+        style={[
+          styles.topNav,
+          {backgroundColor: props.isThemeDark ? '#A47551' : 'transparent'},
+        ]}
+      />
+    )}
+    <View>{children}</View>
+  </SafeAreaView>
 );
 
 AppLayout.defaultProps = {

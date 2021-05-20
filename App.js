@@ -1,7 +1,7 @@
 import 'react-native-gesture-handler';
 import React, {useContext, useEffect} from 'react';
 import * as eva from '@eva-design/eva';
-import {ApplicationProvider, IconRegistry} from '@ui-kitten/components';
+import {ApplicationProvider, IconRegistry, Layout} from '@ui-kitten/components';
 import {EvaIconsPack} from '@ui-kitten/eva-icons';
 import AppNavigator from './src/routes/AppNavigator';
 import {AppContext} from './src/context/AppContext';
@@ -22,12 +22,14 @@ const AppState = () => {
       <IconRegistry
         icons={[EvaIconsPack, FeatherIconsPack, IoniconIconsPack]}
       />
-      <ApplicationProvider {...eva} theme={eva.light}>
+      <ApplicationProvider {...eva} theme={{...eva.light}}>
         <StatusBar
           backgroundColor={state.isThemeDark != true ? '#D0B49F' : '#A47551'}
           barStyle="dark-content"
         />
-        <AppNavigator />
+        <Layout>
+          <AppNavigator />
+        </Layout>
       </ApplicationProvider>
     </>
   );
